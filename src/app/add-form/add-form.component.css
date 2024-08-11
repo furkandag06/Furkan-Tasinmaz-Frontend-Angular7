@@ -1,0 +1,29 @@
+/* Sayfanın tamamını kaplayan harita */
+.map-fullscreen {
+    height: 100vh; /* Ekranın tamamını kaplar */
+    width: 100%; /* Ekranın tamamını kaplar */
+  }
+  
+  /* Tablonun sağ üst köşede küçük görünmesi */
+  .table-container {
+    padding: 20px; /* İç boşluk */
+    position: relative;
+    background: #fff; /* Beyaz arka plan */
+    border-radius: 8px; /* Köşeleri yuvarlayın */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    height: 100vh; /* Ekranın yüksekliğine göre */
+    overflow-y: auto; /* Taşma durumunda kaydırma */
+  }
+  
+  /* Formun stilini ayarlayın */
+  .business-form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Karte ve diğer stiller */
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  

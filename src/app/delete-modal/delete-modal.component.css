@@ -1,0 +1,112 @@
+/* Genel vücut stili */
+body {
+  overflow: hidden; /* Sayfa kaydırma çubuğunu gizle */
+}
+
+/* Modal Arka Plan */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Tam ekran yüksekliği */
+  background-color: rgba(0, 0, 0, 0.5); /* Arka plan koyulaştırma */
+  margin: 0; /* Kenar boşluklarını kaldır */
+  padding: 0; /* İç boşlukları kaldır */
+}
+
+/* Modal Dialog */
+.modal-dialog {
+  max-width: 500px; /* Modal genişliği */
+  margin: 0; /* Modal kenar boşluklarını kaldır */
+  display: flex;
+  align-items: center; /* Dikey ortalama */
+}
+
+/* Modal İçerik */
+.modal-content {
+  border-radius: .5rem; /* Modal köşe yuvarlatma */
+  background-color: #fff; /* Arka plan rengi */
+  border: 1px solid #dee2e6; /* Modal kenar rengi */
+  width: 100%; /* Modal genişliği */
+  margin: 0; /* İçerik kenar boşluklarını kaldır */
+}
+
+/* Modal Başlık */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6; /* Başlık altı kenar rengi */
+  background-color: #f8f9fa; /* Başlık arka plan rengi */
+}
+
+.modal-header .modal-title {
+  margin: 0;
+  font-size: 1.25rem; /* Başlık yazı boyutu */
+  font-weight: bold;
+}
+
+/* Kapat butonu stili */
+.close {
+  background: none; /* Arka plan rengi yok */
+  border: none; /* Sınır yok */
+  font-size: 40px; /* Büyük font boyutu */
+  color: #000000; /* Font rengi */
+  cursor: pointer; /* İmleç işareti */
+  padding: 0; /* İç boşluk yok */
+  margin-left: auto; /* Sağ tarafa hizalama */
+  transition: color 0.3s ease; /* Geçiş efekti */
+}
+
+.close:hover {
+  color: #ff0000; /* Üzerine gelindiğinde renk */
+}
+
+/* Modal İçerik */
+.modal-body {
+  padding: 1rem;
+  font-size: 1rem; /* İçerik yazı boyutu */
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #dee2e6; /* Alt kenar rengi */
+  background-color: #f8f9fa; /* Footer arka plan rengi */
+}
+
+/* Sil Butonu */
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+}
+
+/* İptal Butonu */
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  font-size: 1rem;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+}

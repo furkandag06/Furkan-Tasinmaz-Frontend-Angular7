@@ -1,0 +1,100 @@
+/* Form stilini ayarlama */
+.user-form {
+  max-width: 600px; /* Form genişliği */
+  margin: 0 auto; /* Ortalanma */
+  padding: 5px; /* İç boşluk */
+  border-radius: 8px; /* Köşe yuvarlama */
+  background-color: #f9f9f9; /* Arka plan rengi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+}
+
+/* Form grupları arasındaki boşluk */
+.user-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* Etiketlerin stili */
+.user-form label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Giriş alanlarının stili */
+.user-form .form-control {
+  border: 1px solid #ced4da; /* Sınır rengi */
+  border-radius: 4px; /* Köşe yuvarlama */
+  padding: 10px; /* İç boşluk */
+  font-size: 16px; /* Yazı boyutu */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efektleri */
+}
+
+/* Giriş alanları odaklandığında */
+.user-form .form-control:focus {
+  border-color: #007bff; /* Sınır rengi */
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Gölge efekti */
+}
+
+/* Buton stili - Birincil ve ikincil butonlar */
+.user-form .btn-primary, .user-form .btn-secondary {
+  border-radius: 16px; /* Köşe yuvarlama */
+  padding: 10px 20px; /* İç boşluk */
+  font-size: 16px; /* Yazı boyutu */
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease; /* Geçiş efektleri */
+  margin-right: 10px; /* Butonlar arası boşluk */
+}
+
+/* Birincil buton */
+.user-form .btn-primary {
+  background-color: #007bff; /* Arka plan rengi */
+  border-color: #007bff; /* Sınır rengi */
+  color: #fff; /* Yazı rengi */
+}
+
+/* Birincil butonun üzerine gelindiğinde */
+.user-form .btn-primary:hover {
+  background-color: #0056b3; /* Arka plan rengi */
+  border-color: #004080; /* Sınır rengi */
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+}
+
+/* Birincil butonun odaklandığında */
+.user-form .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Gölge efekti */
+}
+
+/* İkincil buton */
+.user-form .btn-secondary {
+  background-color: #6c757d; /* Arka plan rengi */
+  border-color: #6c757d; /* Sınır rengi */
+  color: #fff; /* Yazı rengi */
+}
+
+/* İkincil butonun üzerine gelindiğinde */
+.user-form .btn-secondary:hover {
+  background-color: #5a6268; /* Arka plan rengi */
+  border-color: #545b62; /* Sınır rengi */
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+}
+
+/* İkincil butonun odaklandığında */
+.user-form .btn-secondary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5); /* Gölge efekti */
+}
+
+/* Kapat butonu stili */
+.close {
+  background: none; /* Arka plan rengi yok */
+  border: none; /* Sınır yok */
+  font-size: 32px; /* Büyük font boyutu */
+  color: #333; /* Font rengi */
+  cursor: pointer; /* İmleç işareti */
+  padding: 0; /* İç boşluk yok */
+  margin-left: auto; /* Sağ tarafa hizalama */
+  transition: color 0.3s ease; /* Geçiş efekti */
+}
+
+.close:hover {
+  color: #ff0000; /* Üzerine gelindiğinde renk */
+}

@@ -1,0 +1,75 @@
+/* Form Container */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Form Label */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+/* Form Input */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Form Input Focus */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+/* Submit Button */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px); /* Hafif yukarı kaldırma */
+}

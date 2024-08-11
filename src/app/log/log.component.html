@@ -1,0 +1,85 @@
+<br><br>
+
+<div *ngIf="!loading" class="search-container">
+  <div class="search-input-container">
+    <input type="text" [(ngModel)]="searchTerm" (input)="searchLogs()" placeholder="Arama yap..."
+      class="search-input" />
+    <i class="fa fa-search search-icon"></i> <!-- Arama ikonu -->
+  </div>
+  <button class="export-button" (click)="exportToExcel()">
+    <i class="fa fa-file-excel export-icon"></i> <!-- Excel ikonu -->
+    Excel'e Aktar
+  </button>
+  <button class="clear-button" (click)="clearSearch()">
+    <i class="fa fa-times clear-icon"></i> <!-- Temizleme ikonu -->
+    Aramayı Temizle
+  </button>
+</div>
+
+<!-- Filtreleme Formu -->
+<div *ngIf="!loading" class="filter-container">
+  <form>
+    <div class="form-group">
+      <label for="durum">Durum:</label>
+      <select id="durum" [(ngModel)]="filterCriteria.durum" name="durum" (change)="applyFilters()">
+        <option value="">Hepsi</option>
+        <option *ngFor="let durum of durumList" [value]="durum">{{ durum }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="islemTip">İşlem Tipi:</label>
+      <select id="islemTip" [(ngModel)]="filterCriteria.islemTip" name="islemTip" (change)="applyFilters()">
+        <option value="">Hepsi</option>
+        <option *ngFor="let islemTip of islemTipList" [value]="islemTip">{{ islemTip }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tarihveSaat">Tarih :</label>
+      <input id="tarihveSaat" type="date" [(ngModel)]="filterCriteria.tarihveSaat" name="tarihveSaat"
+        (change)="applyFilters()" />
+    </div>
+  </form>
+</div>
+
+<div class="table-container" *ngIf="!loading">
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox" (change)="selectAll($event)" /></th>
+        <th>ID</th>
+        <th>Kullanıcı ID</th>
+        <th>Durum</th>
+        <th>İşlem Tipi</th>
+        <th>Tarih ve Saat</th>
+        <th>Detaylar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of filteredLogs">
+        <td><input type="checkbox" [(ngModel)]="log.selected" /></td>
+        <td>{{ log.id }}</td>
+        <td>{{ log.kullaniciId }}</td>
+        <td>{{ log.durum }}</td>
+        <td>{{ log.islemTip }}</td>
+        <td>{{ log.tarihveSaat | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td><button class="view-button" (click)="viewDetails(log)">Görüntüle</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal İçeriği -->
+<div class="modal" *ngIf="selectedLog">
+  <div class="modal-content">
+    <span class="close-button" (click)="closeDetails()">&times;</span>
+    <h2>Log Detayları</h2>
+    <p><strong>ID:</strong> {{selectedLog.id}}</p>
+    <p><strong>Kullanıcı ID:</strong> {{selectedLog.kullaniciId}}</p>
+    <p><strong>Durum:</strong> {{selectedLog.durum}}</p>
+    <p><strong>İşlem Tipi:</strong> {{selectedLog.islemTip}}</p>
+    <p><strong>Açıklama:</strong> {{selectedLog.aciklama}}</p>
+    <p><strong>Kullanıcı Tipi:</strong> {{selectedLog.kullaniciTip}}</p>
+    <p><strong>Tarih ve Saat:</strong> {{datePipe.transform(selectedLog.tarihveSaat, 'dd/MM/yyyy HH:mm')}}</p>
+    <button class="close-modal-button" (click)="closeDetails()">Kapat</button>
+  </div>
+</div>

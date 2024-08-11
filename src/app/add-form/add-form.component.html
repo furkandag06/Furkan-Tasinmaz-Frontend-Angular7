@@ -1,0 +1,101 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Tablonun Görüntüleneceği Alan -->
+    <div class="col-md-4 col-lg-3 table-container">
+      <form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="business-form">
+        <div class="card business-card">
+          <div class="card-header text-center business-card-header">
+            <h4 class="mb-0">Yeni Taşınmaz Ekle</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-row">
+              <div class="col-md-12">
+                <!-- Form Content -->
+                <div class="form-group mb-4">
+                  <label for="city" class="form-label">İl:</label>
+                  <select id="city" formControlName="city" class="form-control business-select"
+                    (change)="onCityChange($event.target.value)">
+                    <option value="" disabled selected>İl Seçiniz</option>
+                    <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+                  </select>
+                  <div *ngIf="addForm.controls.city.touched && addForm.controls.city.invalid" class="text-danger mt-2">
+                    Lütfen bir il seçin.
+                  </div>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="district" class="form-label">İlçe:</label>
+                  <select id="district" formControlName="district" class="form-control business-select"
+                    (change)="onDistrictChange($event.target.value)">
+                    <option value="" disabled selected>İlçe Seçiniz</option>
+                    <option *ngFor="let district of districts" [value]="district.id">{{ district.districtName }}
+                    </option>
+                  </select>
+                  <div *ngIf="addForm.controls.district.touched && addForm.controls.district.invalid"
+                    class="text-danger mt-2">
+                    Lütfen bir ilçe seçin.
+                  </div>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="neighborhood" class="form-label">Mahalle:</label>
+                  <select id="neighborhood" formControlName="neighborhoodId" class="form-control business-select">
+                    <option value="" disabled selected>Mahalle Seçiniz</option>
+                    <option *ngFor="let neighborhood of neighborhoods" [value]="neighborhood.id">{{
+                      neighborhood.neigborhoodName }}</option>
+                  </select>
+                  <div *ngIf="addForm.controls.neighborhoodId.touched && addForm.controls.neighborhoodId.invalid"
+                    class="text-danger mt-2">
+                    Lütfen bir mahalle seçin.
+                  </div>
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="island" class="form-label">Ada:</label>
+                  <input type="text" id="island" formControlName="island" class="form-control business-input"
+                    placeholder="Ada girin">
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="parcel" class="form-label">Parsel:</label>
+                  <input type="text" id="parcel" formControlName="parcel" class="form-control business-input"
+                    placeholder="Parsel girin">
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="quality" class="form-label">Nitelik:</label>
+                  <input type="text" id="quality" formControlName="quality" class="form-control business-input"
+                    placeholder="Nitelik girin">
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="coordinates" class="form-label">Koordinatlar:</label>
+                  <input type="text" id="coordinates" formControlName="coordinates" class="form-control business-input"
+                    placeholder="Koordinatlar girin" readonly>
+                </div>
+
+                <!--<div class="form-group mb-4">
+                  <label for="userId" class="form-label">Kullanıcı ID:</label>
+                  <input type="text" id="userId" formControlName="userId" class="form-control business-input"
+                    placeholder="Kullanıcı ID girin">
+                  <div *ngIf="addForm.controls.userId.touched && addForm.controls.userId.invalid"
+                    class="text-danger mt-2">
+                    Lütfen bir kullanıcı ID girin.
+                  </div>
+                </div>-->
+
+                <button type="submit" class="btn btn-primary business-btn w-100 py-3"
+                  [disabled]="addForm.invalid">Ekle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Harita Görüntülenecek Alan -->
+    <div class="col-md-8 col-lg-9 map-container">
+      <div id="map" class="map-fullscreen"></div>
+    </div>
+  </div>
+</div>

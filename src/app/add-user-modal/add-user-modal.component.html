@@ -1,0 +1,62 @@
+<div class="modal-header">
+  <h4 class="modal-title">Kullanıcı Ekle</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('cancel')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()" class="user-form">
+    <div class="form-group">
+      <label for="name">İsim:</label>
+      <input id="name" formControlName="name" class="form-control" />
+      <div *ngIf="userForm.get('name').invalid && userForm.get('name').touched" class="text-danger">
+        İsim alanı zorunludur.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="surname">Soyisim:</label>
+      <input id="surname" formControlName="surname" class="form-control" />
+      <div *ngIf="userForm.get('surname').invalid && userForm.get('surname').touched" class="text-danger">
+        Soyisim alanı zorunludur.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" class="form-control" />
+      <div *ngIf="userForm.get('email').invalid && userForm.get('email').touched" class="text-danger">
+        Geçerli bir email adresi girin.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Şifre:</label>
+      <input id="password" formControlName="password" type="password" class="form-control" />
+      <div *ngIf="userForm.get('password').invalid && userForm.get('password').touched" class="text-danger">
+        Şifre en az 8 karakter olmalı ve bir harf, bir rakam ve bir özel karakter içermelidir.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefon:</label>
+      <input id="phone" formControlName="phone" class="form-control" />
+      <div *ngIf="userForm.get('phone').invalid && userForm.get('phone').touched" class="text-danger">
+        Geçerli bir telefon numarası girin.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Adres:</label>
+      <input id="address" formControlName="address" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="role">Rol:</label>
+      <select id="role" formControlName="role" class="form-control">
+        <option value="" disabled selected>Rol Seçin</option>
+        <option value="Admin">Admin</option>
+        <option value="User">Kullanıcı</option>
+      </select>
+      <div *ngIf="userForm.get('role').invalid && userForm.get('role').touched" class="text-danger">
+        Rol seçilmelidir.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('cancel')">Kapat</button>
+  </form>
+</div>

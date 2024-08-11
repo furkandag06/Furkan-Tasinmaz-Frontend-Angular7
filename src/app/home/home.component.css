@@ -1,0 +1,249 @@
+/* Genel buton stil ayarları */
+.btn {
+  border-radius: 0.75rem;
+  /* Buton köşelerini yuvarlatır */
+  font-weight: 600;
+  /* Kalın metin */
+  text-transform: uppercase;
+  /* Büyük harf */
+  padding: 0.75rem 1.5rem;
+  /* İç boşluk */
+  border: none;
+  /* Kenarlık yok */
+  cursor: pointer;
+  /* Fare işareti değişir */
+  margin-right: 0.5rem;
+  /* Butonlar arasında boşluk bırakır */
+  display: inline-flex;
+  /* İçerikleri yatay hizalama */
+  align-items: center;
+  /* Dikey hizalama */
+}
+
+/* Düzenle butonu */
+.edit-button {
+  background-color: #0033ff;
+  /* Mavi arka plan */
+  color: white;
+  /* Beyaz metin */
+  font-size: 14px;
+  /* Metin boyutu */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+}
+
+.edit-button:hover {
+  background-color: #002bb3;
+  /* Hover efekti için daha koyu mavi */
+  transform: translateY(-3px);
+  /* Yüksekliğe kaldırma efekti */
+}
+
+.edit-button:focus {
+  outline: none;
+}
+
+.edit-button i {
+  margin-right: 0.75rem;
+  /* İkon ve metin arasında boşluk */
+}
+
+/* Sil butonu */
+.delete-button {
+  background-color: #f41000;
+  /* Kırmızı arka plan */
+  color: white;
+  /* Beyaz metin */
+  font-size: 14px;
+  /* Metin boyutu */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+}
+
+.delete-button:hover {
+  background-color: #c10000;
+  /* Hover efekti için daha koyu kırmızı */
+  transform: translateY(-3px);
+  /* Yüksekliğe kaldırma efekti */
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button i {
+  margin-right: 0.75rem;
+  /* İkon ve metin arasında boşluk */
+}
+
+/* Excel butonu */
+.excel-button {
+  background-color: #28a745;
+  /* Yeşil arka plan */
+  color: white;
+  /* Beyaz metin */
+  font-size: 14px;
+  /* Metin boyutu */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+  display: inline-flex;
+  /* İçerikleri yatay hizalama */
+  align-items: center;
+  /* Dikey hizalama */
+}
+
+.excel-button:hover {
+  background-color: #218838;
+  /* Hover efekti için daha koyu yeşil */
+  transform: translateY(-3px);
+  /* Yüksekliğe kaldırma efekti */
+}
+
+.excel-button:focus {
+  outline: none;
+}
+
+.excel-button i {
+  margin-right: 0.75rem;
+  /* İkon ve metin arasında boşluk */
+}
+
+/* Harita alanı stil ayarları */
+.map-container {
+  position: relative;
+  /* Harita üzerinde ögeleri konumlandırabilmek için */
+  height: 400px;
+  /* Harita yüksekliği */
+  margin-bottom: 1rem;
+  /* Harita alt boşluğu */
+  margin-top: 2rem; /* Navbar ile harita arasına boşluk ekler */
+}
+
+/* Arama kutusu stil ayarları */
+.search-container {
+  display: flex;
+  /* Yatay hizalama */
+  justify-content: space-between;
+  /* Boşlukları eşit dağıtma */
+}
+
+.search-box {
+  flex-grow: 1;
+  /* Kutu genişliği */
+  padding: 0.5rem;
+  /* İç boşluk */
+  border: 1px solid #ccc;
+  /* Kenarlık */
+  border-radius: 0.5rem;
+  /* Köşe yuvarlatma */
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  /* İç boşluk */
+  border: none;
+  /* Kenarlık yok */
+  background-color: #007BFF;
+  /* Mavi arkaplan */
+  color: white;
+  /* Beyaz metin */
+  cursor: pointer;
+  /* Fare işareti değişir */
+  border-radius: 0.5rem;
+  /* Köşe yuvarlatma */
+  margin-left: 1rem;
+  /* Arama kutusu ile buton arasında boşluk */
+}
+
+/* Tablo stil ayarları */
+.table {
+  width: 100%;
+  /* Tam genişlik */
+  border-collapse: collapse;
+  /* Kenarlıkları birleştirir */
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  /* İç boşluk */
+  border: 1px solid #ddd;
+  /* Kenarlık */
+  text-align: left;
+  /* Sol hizalama */
+}
+
+.table th {
+  background-color: #f2f2f2;
+  /* Başlık arkaplanı */
+}
+
+/* Sayfalama stil ayarları */
+.pagination-container {
+  display: flex;
+  /* Yatay hizalama */
+  justify-content: center;
+  /* Ortaya hizalama */
+}
+
+.pagination .page-item {
+  margin: 0 0.25rem;
+  /* Sayfa numaraları arasında boşluk */
+}
+
+.pagination .page-link {
+  padding: 0.5rem 0.75rem;
+  /* İç boşluk */
+  border: 1px solid #ddd;
+  /* Kenarlık */
+  border-radius: 0.50rem;
+  /* Köşe yuvarlatma */
+  cursor: pointer;
+  /* Fare işareti değişir */
+}
+
+.pagination .page-item.disabled .page-link {
+  cursor: not-allowed;
+  /* Fare işareti değişir */
+  opacity: 0.6;
+  /* Saydamlık */
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007BFF;
+  /* Aktif sayfa arkaplanı */
+  color: white;
+  /* Beyaz metin */
+}
+
+/* Export butonu */
+.export-button {
+  background-color: #28a745; /* Yeşil arka plan */
+  color: white;
+  /* Beyaz metin */
+  font-size: 14px;
+  /* Metin boyutu */
+  border: none;
+  /* Kenarlık yok */
+  cursor: pointer;
+  /* Fare işareti değişir */
+  margin-right: 0.5rem; /* Diğer butonlarla uyumlu boşluk */
+  display: inline-flex;
+  /* İçerikleri yatay hizalama */
+  align-items: center;
+  /* Dikey hizalama */
+  padding: 0.75rem 1.5rem; /* İç boşluk */
+}
+
+.export-button i {
+  margin-right: 0.75rem; /* İkon ve metin arasında boşluk */
+}
+
+.export-button:hover {
+  background-color: #218838; /* Hover efekti için daha koyu yeşil */
+  transform: translateY(-3px); /* Yüksekliğe kaldırma efekti */
+}
+
+.export-button:focus {
+  outline: none;
+}

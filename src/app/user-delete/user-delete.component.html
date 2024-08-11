@@ -1,0 +1,18 @@
+<!-- user-delete.component.html -->
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Kullanıcıyı Sil</h4>
+      <button type="button" class="close" aria-label="Close" (click)="close()">
+        <i class="fas fa-times"></i> <!-- Font Awesome çarpı ikonu -->
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Bu kullanıcıyı silmek istediğinizden emin misiniz?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sil</button>
+      <button type="button" class="btn btn-secondary" (click)="close()">İptal</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+export class Neighborhood {
+    id: number;
+    neighborhoodName: string;
+    districtId: number;
+}

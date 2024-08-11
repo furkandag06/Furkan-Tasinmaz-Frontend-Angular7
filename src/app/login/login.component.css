@@ -1,0 +1,161 @@
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px; /* Üst barın yüksekliğini azalttık */
+  background-color: rgba(255, 255, 255, 0.6); /* Beyazımsı ve şeffaf bir arka plan rengi */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+  z-index: 1000; /* Diğer içeriğin üstünde olmasını sağlar */
+  transition: background-color 0.3s ease; /* Hover durumunda arka plan rengini geçişli olarak değiştirmek için */
+}
+
+.page-header .logo {
+  max-width: 200px; /* Logo genişliğini azalttık */
+  height: auto;
+}
+
+/* Hover durumunda beyaz barın rengi */
+.page-header:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Hover durumunda barın rengi biraz daha opak */
+}
+/* Form düzeni */
+.user-form {
+  max-width: 400px;
+  margin: 200px auto; /* Formu sayfanın ortasında yerleştirmek için yeterli boşluk bırakın */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ekranda ortalama */
+}
+
+/* Form grup düzeni */
+.user-form .form-group {
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.user-form .form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Giriş ve şifre alanları */
+.user-form .input-container {
+  position: relative;
+}
+
+.user-form .input-container i {
+  position: absolute;
+  left: 10px; /* İkonun sol kenardan uzaklığı */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff;
+  font-size: 1.2em;
+}
+
+.user-form .input-container input {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* İç boşlukları ayarlayın */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none; /* Remove default outline */
+}
+
+.user-form .input-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Add a subtle focus outline */
+}
+
+.user-form .input-container input.ng-invalid.ng-touched {
+  border-color: #e3342f;
+  background-color: #f8d7da;
+}
+
+.user-form .text-danger {
+  color: #e3342f;
+  margin-top: 5px;
+  font-size: 0.875em;
+}
+
+/* Şifre gösterme butonu */
+.user-form .toggle-password-btn {
+  position: absolute;
+  top: 55%; /* Göz ikonunu biraz daha aşağıya almak için */
+  right: 30px; /* Sağdan olan uzaklık */
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.user-form .toggle-password-btn .fa {
+  color: #007bff; /* Göz ikonunun rengi */
+  font-size: 1.2em; /* İkonun boyutu */
+}
+
+/* Giriş Yap butonu */
+.user-form .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-form .btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.user-form .btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Place the video behind other content */
+}
+
+#backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 15px; /* Daha da küçük padding */
+  }
+
+  .user-form {
+    margin: 100px auto; /* Adjust margin for smaller screens */
+    padding: 15px;
+  }
+
+  .user-form .btn {
+    font-size: 0.9em;
+  }
+}
+

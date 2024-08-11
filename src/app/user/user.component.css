@@ -1,0 +1,128 @@
+/* Arama Kutusu ve Butonlar için Stil */
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  border-radius: 1rem;
+  /* Köşeleri yuvarlatılmış */
+  padding: 0.5rem 1rem;
+  /* İç boşluk */
+  font-size: 1rem;
+  /* Yazı boyutu */
+  flex: 1;
+  /* Arama kutusunun genişlemesini sağlar */
+  height: 3rem;
+  /* Butonlarla aynı yükseklikte */
+}
+
+/* Buton grupları için stil */
+.btn-group {
+  display: flex;
+  /* Butonları yatay olarak hizalar */
+  gap: 0.8rem;
+  /* Butonlar arasında boşluk */
+  margin-left: 1rem;
+  /* Arama kutusundan sağa boşluk */
+}
+
+/* Genel buton stili */
+.btn {
+  border-radius: 1rem;
+  /* Köşeleri yuvarlatılmış */
+  padding: 0.5rem 1rem;
+  /* İç boşluk */
+  font-size: 1rem;
+  /* Yazı boyutu */
+  height: 3rem;
+  /* Arama kutusuyla aynı yükseklikte */
+}
+
+/* Düzenle Butonu */
+.btn-primary {
+  background-color: #007bff;
+  /* Buton arka plan rengi */
+  border-color: #007bff;
+  /* Buton kenar rengi */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Hover durumunda arka plan rengi */
+  border-color: #004085;
+  /* Hover durumunda kenar rengi */
+  transform: translateY(-3px);
+  /* Hafif yukarı kaldırma */
+}
+
+/* Sil Butonu */
+.btn-danger {
+  background-color: #ff0019;
+  /* Silme butonu arka plan rengi */
+  border-color: #a41818;
+  /* Silme butonu kenar rengi */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  /* Hover durumunda arka plan rengi */
+  border-color: #e40d22;
+  /* Hover durumunda kenar rengi */
+  transform: translateY(-3px);
+  /* Hafif yukarı kaldırma */
+}
+
+/* Kullanıcı Ekle Butonu */
+.btn-primary.green {
+  background-color: #28a745;
+  /* Yeşil arka plan rengi */
+  border-color: #28a745;
+  /* Yeşil kenar rengi */
+  color: #fff;
+  /* Beyaz yazı rengi */
+}
+
+.btn-primary.green:hover {
+  background-color: #218838;
+  /* Hover durumunda daha koyu yeşil */
+  border-color: #1e7e34;
+  /* Hover durumunda daha koyu yeşil kenar rengi */
+  transform: translateY(-3px);
+  /* Hafif yukarı kaldırma */
+}
+
+.btn-primary.position-fixed {
+  background-color: #007bff;
+  /* Buton arka plan rengi */
+  border-color: #007bff;
+  /* Buton kenar rengi */
+  border-radius: 1rem;
+  /* Köşeleri yuvarlatılmış */
+  padding: .5rem 1rem;
+  /* Buton padding */
+  font-size: 1.25rem;
+  /* Buton yazı boyutu */
+  color: #fff;
+  /* Buton yazı rengi */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Geçiş efekti */
+}
+
+.btn-primary.position-fixed:hover {
+  background-color: #0056b3;
+  /* Hover durumunda arka plan rengi */
+  transform: translateY(-10px);
+  /* Hafif yukarı kaldırma */
+}

@@ -1,0 +1,33 @@
+<div>
+  <form (ngSubmit)="updateUser()">
+    <div class="form-group">
+      <label for="username">Kullanıcı Adı</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.name" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="surname">Soyisim</label>
+      <input type="text" class="form-control" id="surname" [(ngModel)]="user.surname" name="surname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">E-posta</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefon</label>
+      <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Adres</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="user.address" name="address" required>
+    </div>
+    <div class="form-group">
+      <label for="role">Rol</label>
+      <select class="form-control" id="role" [(ngModel)]="user.role" name="role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">İptal</button>
+  </form>
+</div>

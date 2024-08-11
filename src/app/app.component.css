@@ -1,0 +1,61 @@
+/* NavBar'daki markayı kare içine al */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brand-container {
+    padding: 0.5rem 1rem; /* İçerik çevresinde boşluk */
+    background-color: #f8f9fa; /* Arka plan rengi */
+    border: 2px solid #004a85; /* Kenarlık rengi ve kalınlığı */
+    border-radius: 5px; /* Köşeleri yuvarlaştır */
+    font-weight: bold; /* Yazı kalınlığı */
+    color: #004a85; /* Yazı rengi */
+    text-transform: uppercase; /* Büyük harflerle yaz */
+    font-size: 0.95rem; /* Yazı boyutunu küçült */
+    transition: transform 0.3s, box-shadow 0.3s; /* Geçiş efektleri */
+  }
+  
+  /* NavBar tasarımı ile uyumlu olması için ek stil ayarları */
+  .navbar {
+    padding: 0.5rem 1rem; /* NavBar içi boşluk */
+  }
+  
+  /* Font Awesome ikonlarının boyutunu büyütmek için */
+  .navbar-nav .nav-link i {
+    font-size: 1.3rem; /* İkon boyutunu büyütmek için */
+    transition: color 0.3s, transform 0.3s; /* Geçiş efektleri */
+  }
+  
+  /* Nav linklerinin font ayarları */
+  .navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif; /* Google Fonts'tan Roboto fontunu kullan */
+    font-size: 1.2rem; /* Metin boyutu */
+    font-weight: 1000; /* Metin kalınlığı */
+    color: #333; /* Metin rengi */
+    transition: color 0.3s, transform 0.3s; /* Geçiş efektleri */
+  }
+  
+  /* Hover efekti ekleyerek butonları yukarı kaldırma ve renk değiştirme */
+  .navbar-nav .nav-link:hover {
+    color: #004a85; /* Renk değişikliği */
+    transform: translateY(-5px); /* Butonun havaya kalkması */
+  }
+  
+  .navbar-nav .nav-link i:hover {
+    color: #004a85; /* İkon renginin değişmesi */
+    transform: translateY(-2px); /* İkonun havaya kalkması */
+  }
+  
+ /* Logo stil ayarları */
+.navbar-logo {
+  max-height: 50px; /* veya ihtiyaca göre uygun bir yükseklik */
+  width: auto;
+  transition: transform 0.3s ease; /* Hareketin yumuşak olmasını sağlar */
+}
+
+/* Hover efekti ile logoyu hareket ettir */
+.navbar-logo:hover {
+  transform: translateY(-5px); /* Üzerine gelindiğinde logoyu biraz daha yukarı kaydırır */
+}
+  

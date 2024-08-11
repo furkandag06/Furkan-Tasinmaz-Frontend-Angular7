@@ -1,0 +1,91 @@
+<div class="container">
+  <!-- Harita Alanı -->
+  <div class="map-container">
+    <app-map></app-map>
+  </div>
+
+  <!-- İşlemler -->
+  <div>
+    <!-- Düzenle butonu -->
+    <button class="btn edit-button" (click)="openEditModal()" [disabled]="selectedItems.length !== 1">
+      <i class="fas fa-edit"></i> Düzenle
+    </button>
+
+    <!-- Sil butonu -->
+    <button class="btn delete-button" (click)="openDeleteModal()" [disabled]="selectedItems.length === 0">
+      <i class="fas fa-trash"></i> Sil
+    </button>
+
+    <!-- Excel'e Aktar butonu -->
+    <button class="btn export-button" (click)="exportToExcel()" [disabled]="selectedItems.length === 0">
+      <i class="fas fa-file-excel"></i> Excel'e Aktar
+    </button>
+  </div>
+
+  <br>
+
+  <!-- Arama Bölümü -->
+  <div class="search-container mb-3">
+    <input type="text" [(ngModel)]="searchTerm" (input)="searchItems()" placeholder="Ara..." class="search-box" />
+    <button class="search-button" (click)="searchItems()">Ara</button>
+  </div>
+
+  <!-- Tablo başlıkları ve içerik -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th><input type="checkbox" (change)="onCheckboxChangeAll($event)" /></th>
+        <th *ngIf="isAdmin">ID</th> <!-- Yalnızca adminler için görünür -->
+        <th>İl</th>
+        <th>İlçe</th>
+        <th>Mahalle</th>
+        <th>Adalar</th>
+        <th>Parsel</th>
+        <th>Nitelik</th>
+        <th>Koordinatlar</th>
+        <th *ngIf="isAdmin">Kullanıcı ID</th> <!-- Yalnızca adminler için görünür -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedItems[currentPage]">
+        <td><input type="checkbox" (change)="onCheckboxChange(item, $event)" /></td>
+        <td *ngIf="isAdmin">{{item.id}}</td> <!-- Yalnızca adminler için görünür -->
+        <td>{{ item.neigborhood.district.city.name }}</td>
+        <td>{{ item.neigborhood.district.districtName }}</td>
+        <td>{{ item.neigborhood.neigborhoodName }}</td>
+        <td>{{ item.island }}</td>
+        <td>{{ item.parcel }}</td>
+        <td>{{ item.quality }}</td>
+        <td>{{ item.coordinateInformation }}</td>
+        <td *ngIf="isAdmin">{{ item.userId }}</td> <!-- Yalnızca adminler için görünür -->
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Sayfalama butonları -->
+  <div class="pagination-container mt-3">
+    <nav>
+      <ul class="pagination">
+        <li class="page-item" [ngClass]="{'disabled': currentPage === 0}">
+          <a class="page-link" (click)="changePage(currentPage - 1)">Önceki</a>
+        </li>
+        <li class="page-item" *ngFor="let page of paginatedItems; let i = index"
+          [ngClass]="{'active': i === currentPage}">
+          <a class="page-link" (click)="changePage(i)">{{ i + 1 }}</a>
+        </li>
+        <li class="page-item" [ngClass]="{'disabled': currentPage === paginatedItems.length - 1}">
+          <a class="page-link" (click)="changePage(currentPage + 1)">Sonraki</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Modals -->
+  <ng-template #editModal let-modal>
+    <app-edit-modal></app-edit-modal>
+  </ng-template>
+
+  <ng-template #deleteModal let-modal>
+    <app-delete-modal></app-delete-modal>
+  </ng-template>
+</div>

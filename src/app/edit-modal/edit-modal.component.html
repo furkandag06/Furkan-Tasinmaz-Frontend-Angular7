@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <h4 class="modal-title">Düzenle</h4>
+  <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+    <div class="form-group">
+      <label for="city">İl:</label>
+      <select class="form-control" id="city" formControlName="city" (change)="onCityChange($event.target.value)">
+        <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="district">İlçe:</label>
+      <select class="form-control" id="district" formControlName="district" (change)="onDistrictChange($event.target.value)">
+        <option *ngFor="let district of districts" [value]="district.id">{{district.districtName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="neighborhood">Mahalle:</label>
+      <select class="form-control" id="neighborhood" formControlName="neighborhood">
+        <option *ngFor="let neighborhood of neigborhoods" [value]="neighborhood.id">{{neighborhood.neigborhoodName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="island">Ada:</label>
+      <input type="text" class="form-control" id="island" formControlName="island">
+    </div>
+    <div class="form-group">
+      <label for="parcel">Parsel:</label>
+      <input type="text" class="form-control" id="parcel" formControlName="parcel">
+    </div>
+    <div class="form-group">
+      <label for="quality">Nitelik:</label>
+      <input type="text" class="form-control" id="quality" formControlName="quality">
+    </div>
+    <br>
+    <div class="modal-footer">
+      <button type="button" class="modal-btn-cancel" (click)="closeModal()">Kapat</button>
+      <button type="submit" class="modal-btn-save" [disabled]="editForm.invalid">Kaydet</button>
+    </div>
+  </form>
+</div>

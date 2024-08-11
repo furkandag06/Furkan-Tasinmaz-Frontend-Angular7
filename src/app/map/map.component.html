@@ -1,0 +1,16 @@
+<div id="map" class="map"></div>
+
+<div class="opacity-control">
+    <label for="opacity">Opaklık: </label>
+    <input type="range" id="opacity" min="0" max="100" value="50" (input)="onOpacityChange($event)">
+</div>
+
+<div class="zoom-controls">
+    <button id="zoom-in"><i class="fas fa-plus"></i></button>
+    <button id="zoom-out"><i class="fas fa-minus"></i></button>
+</div>
+
+<div class="map-switcher">
+    <button id="osm-button" class="map-button">OSM</button>
+    <button id="google-button" class="map-button">Google Maps</button>
+</div>

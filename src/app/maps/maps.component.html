@@ -1,0 +1,49 @@
+<div class="map-container">
+  <!-- Harita Alanı -->
+  <div id="map" class="map"></div>
+
+  <!-- Zoom Kontrolleri -->
+  <div class="zoom-controls">
+    <button class="zoom-btn" (click)="zoomIn()">
+      <i class="fas fa-plus"></i>
+    </button>
+    <button class="zoom-btn" (click)="zoomOut()">
+      <i class="fas fa-minus"></i>
+    </button>
+  </div>
+
+  <!-- Zoom Seviyesi -->
+  <div class="zoom-level" *ngIf="zoomLevel !== undefined">
+    Zoom Level: {{ zoomLevel }}%
+  </div>
+
+  <!-- Koordinatlar -->
+  <div class="coordinates" *ngIf="coordinates">
+    Koordinatlar: {{ coordinates }}
+  </div>
+
+  <!-- Diğer Kontroller -->
+  <div class="controls">
+    <form>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="featureType" value="marker" id="marker" checked>
+        <label class="form-check-label" for="marker">
+          İşaretçi
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="featureType" value="circle" id="circle">
+        <label class="form-check-label" for="circle">
+          Çember
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="featureType" value="line" id="line">
+        <label class="form-check-label" for="line">
+          Çizgi
+        </label>
+      </div>
+      <button type="button" class="btn btn-danger mt-3" (click)="clearFeatures()">Temizle</button>
+    </form>
+  </div>
+</div>

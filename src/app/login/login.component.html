@@ -1,0 +1,45 @@
+<div class="video-background">
+  <video autoplay muted loop id="backgroundVideo">
+    <source src="../../../assets/sky.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+</div>
+
+<header class="page-header">
+  <img src="assets/logo.png" alt="OdakGIS Logo" class="logo" />
+</header>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="user-form">
+  <!-- E-posta alanı -->
+  <div class="form-group">
+    <label for="email">E-posta</label>
+    <div class="input-container">
+      <i class="fas fa-envelope"></i>
+      <input id="email" formControlName="email" class="form-control" placeholder="E-posta adresinizi girin" />
+    </div>
+    <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched" class="text-danger">
+      Geçerli bir e-posta adresi girin.
+    </div>
+  </div>
+
+  <!-- Şifre alanı -->
+  <div class="form-group">
+    <label for="password">Şifre</label>
+    <div class="input-container">
+      <i class="fas fa-lock"></i>
+      <input id="password" [type]="passwordFieldType" formControlName="password" class="form-control"
+        placeholder="Şifrenizi girin" />
+      <button type="button" class="toggle-password-btn" (click)="togglePasswordVisibility()">
+        <i [ngClass]="passwordFieldType === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+      </button>
+    </div>
+    <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" class="text-danger">
+      Şifre gerekli.
+    </div>
+  </div>
+
+  <!-- Giriş Yap butonu -->
+  <button type="submit" class="btn" [disabled]="loginForm.invalid">
+    <i class="fas fa-sign-in-alt"></i> Giriş Yap
+  </button>
+</form>

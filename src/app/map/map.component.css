@@ -1,0 +1,92 @@
+#map {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.opacity-control {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Move opacity control to the right */
+  background-color: rgba(255, 255, 255, 0.5); /* Slightly transparent background */
+  padding: 6px; /* Reduced padding */
+  border-radius: 4px; /* Slightly smaller border radius */
+  z-index: 1000;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.opacity-control:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Fully opaque on hover */
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 10px; /* Move zoom controls to the top-left corner */
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.zoom-controls button {
+  width: 32px; /* Reduced width */
+  height: 32px; /* Reduced height */
+  margin: 4px 0; /* Reduced margin */
+  padding: 0;
+  font-size: 18px; /* Reduced font size */
+  border: none; /* Remove border */
+  background-color: rgba(0, 123, 255, 0.7); /* Slightly more opaque blue background */
+  color: white; /* White text color */
+  border-radius: 50%; /* Makes the button round */
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.zoom-controls button:hover {
+  background-color: rgba(0, 123, 255, 1); /* Fully opaque on hover */
+  opacity: 1; /* Fully opaque on hover */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.8); /* Slightly smaller glowing effect */
+  transform: translateY(-2px); /* Move button up on hover */
+}
+
+.zoom-controls button:active {
+  background-color: rgba(0, 123, 255, 0.8); /* Slightly darker blue when clicked */
+  transform: translateY(0); /* Reset position on click */
+}
+
+/* New CSS for map switcher buttons */
+.map-switcher {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.map-button {
+  background-color: rgba(0, 123, 255, 0.8); /* More opaque blue background for better visibility */
+  color: white; /* White text */
+  border: none;
+  padding: 8px; /* Reduced padding */
+  margin: 4px 0; /* Reduced margin */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.3s;
+  opacity: 0.9; /* Slightly less transparent by default */
+  font-size: 14px; /* Adjust font size if needed */
+}
+
+.map-button:hover {
+  background-color: rgba(0, 123, 255, 1); /* Fully opaque on hover */
+  opacity: 1; /* Fully opaque on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+  transform: translateY(-2px); /* Move button up on hover */
+}
+
+.map-button:active {
+  background-color: rgba(0, 123, 255, 0.8); /* Slightly darker blue on click */
+  transform: translateY(0); /* Reset position on click */
+}

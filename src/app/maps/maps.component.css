@@ -1,0 +1,107 @@
+.map-container {
+  position: relative; /* Konumlandırma için relative */
+  height: 100vh; /* Harita ve kontrol panelinin tam yüksekliğini kullan */
+}
+
+.map {
+  width: 100%; /* Haritanın tam genişliğini kullan */
+  height: 100%; /* Haritanın tam yüksekliğini kullan */
+}
+
+.controls {
+  position: absolute; /* Konumlandırma için absolute */
+  top: 10px; /* Sağ üst köşeye yerleştirmek için üstten mesafe */
+  right: 10px; /* Sağ üst köşeye yerleştirmek için sağdan mesafe */
+  width: 150px; /* Kontrol paneli genişliği */
+  padding: 20px; /* Padding */
+  background: rgba(255, 255, 255, 0.9); /* Arka plan rengi ve daha az saydamlık */
+  border-radius: 8px; /* Kenarları yuvarlama */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  opacity: 0.7; /* Başlangıçta daha görünür */
+  transition: opacity 0.3s ease; /* Geçiş süresi */
+}
+
+.controls:hover {
+  opacity: 1; /* Mouse üzerine gelince opak */
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.zoom-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Butonlar arasındaki boşluk */
+  opacity: 0.7; /* Başlangıçta daha görünür */
+  transition: opacity 0.3s ease; /* Geçiş süresi */
+}
+
+.zoom-controls:hover {
+  opacity: 1; /* Mouse üzerine gelince opak */
+}
+
+.zoom-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(96, 165, 240, 0.9); /* Daha az saydam arka plan rengi */
+  color: rgba(255, 255, 255, 0.9); /* Hafif saydam beyaz metin rengi */
+  font-size: 24px; /* İkon boyutu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* İmleç gösterimi */
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Geçiş efektleri */
+}
+
+.zoom-btn:hover {
+  background: rgba(0, 123, 255, 1); /* Hover durumu için tam opak arka plan rengi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover durumunda gölge efekti */
+}
+
+.zoom-btn:active {
+  transform: scale(0.95); /* Tıklama efekti */
+}
+
+.zoom-level {
+  position: absolute; /* Konumlandırma için absolute */
+  top: 10px; /* Üstten mesafe */
+  left: 50%; /* Orta */
+  transform: translateX(-50%); /* Orta konumda hizalama */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.7; /* Başlangıçta daha görünür */
+  transition: opacity 0.3s ease; /* Geçiş süresi */
+}
+
+.zoom-level:hover {
+  opacity: 1; /* Mouse üzerine gelince opak */
+}
+
+.coordinates {
+  position: fixed; /* Sabit konumlandırma */
+  bottom: 10px; /* Sol alt köşeye yerleştirmek için alt mesafe */
+  left: 10px; /* Sol alt köşeye yerleştirmek için sol mesafe */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.7; /* Başlangıçta daha görünür */
+  transition: opacity 0.3s ease; /* Geçiş süresi */
+}
+
+.coordinates:hover {
+  opacity: 1; /* Mouse üzerine gelince opak */
+}
